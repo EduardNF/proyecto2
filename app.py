@@ -1,6 +1,7 @@
 import streamlit as st                        #En symbolo del sistema se debe poner: python -m streamlit run app.py  Y python -m pip install
 import pandas as pd 
 import matplotlib.pyplot as plt 
+import plotly.express as px
 
 apgn = pd.read_csv('datos_anteproyecto.csv')
 ran = pd.read_csv('datos_salario.csv')
@@ -22,6 +23,7 @@ with tab1:
     #wage
     ax[2].hist(ran['wage'], bins=30)
 
+
     st.pyplot(fig)
 
     #analisis bivariado
@@ -41,6 +43,7 @@ with tab2:
                   "Nombre Sector",
                   "Tipo de gasto"],
             values='Valor')
-    st.plotly_char(fig)
+
+    st.plotly_chart(fig)
 
         
