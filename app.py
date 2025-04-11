@@ -1,4 +1,4 @@
-import streamlit as st                        #En symbolo del sistema se debe poner: pyton -m streamlit run app.py  Y python -m pip install
+import streamlit as st                        #En symbolo del sistema se debe poner: python -m streamlit run app.py  Y python -m pip install
 import pandas as pd 
 import matplotlib.pyplot as plt 
 
@@ -35,12 +35,12 @@ with tab1:
 
     st.pyplot(fig)
 
-    with tab2:
-        fig = px.treemap(data_frame= df,
-           path=[px.Constant("PGN"),
-                 "Nombre Sector",
-                 "Tipo de gasto"],
-           values='Valor')
-        st.plotly_char(fig)
+with tab2:
+    fig = px.treemap(data_frame=apgn,
+            path=[px.Constant("PGN"),
+                  "Nombre Sector",
+                  "Tipo de gasto"],
+            values='Valor')
+    st.plotly_char(fig)
 
         
